@@ -100,6 +100,7 @@ else
   args+=(${BUILDKITE_COMMAND})
 fi
 
+args+=("--mount" "type=tmpfs,destination=/tmp/rootfs/")
 echo "--- :docker: Running ${BUILDKITE_COMMAND} in ${BUILDKITE_PLUGIN_DOCKER_IMAGE}"
 
 if [[ "${debug_mode:-off}" =~ (on) ]] ; then
