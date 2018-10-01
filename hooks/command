@@ -83,7 +83,7 @@ if [[ -n "${BUILDKITE_PLUGIN_DOCKER_ENTRYPOINT:-}" ]] ; then
   args+=("--entrypoint" "${BUILDKITE_PLUGIN_DOCKER_ENTRYPOINT:-}")
   BUILDKITE_PLUGIN_DOCKER_SHELL="${BUILDKITE_PLUGIN_DOCKER_SHELL:-false}"
 fi
-args+=("--mount" "type=tmpfs,destination=/tmp/rootfs/")
+args+=("--mount" "type=tmpfs,destination=/home/buildkite/.cache/bazel/")
 
 BUILDKITE_PLUGIN_DOCKER_SHELL="${BUILDKITE_PLUGIN_DOCKER_SHELL:-bash -e -c}"
 
